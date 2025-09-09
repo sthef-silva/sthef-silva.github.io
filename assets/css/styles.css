@@ -105,6 +105,9 @@ Accessibility: visible focus, honors reduced motion
   .card {
     background: var(--card-bg); padding: 1rem; border-radius: var(--radius); box-shadow: var(--shadow);
   }
+
+  /* Tidy the space under card headings */
+  .card > h2 { margin-bottom: .75rem; }
   
   .contact-list { list-style: none; padding: 0; margin: 0; }
   .contact-list li { margin: .25rem 0; }
