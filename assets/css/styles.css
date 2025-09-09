@@ -74,15 +74,13 @@ Accessibility: visible focus, honors reduced motion
   .header-actions { display: flex; gap: .5rem; }
   
   /* Nav */
-  .site-nav { display: none; }
-  .site-nav.open { display: block; }
+  .site-nav { display: block; }
   .site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; }
   .site-nav a { text-decoration: none; color: var(--link); padding: .25rem .5rem; border-radius: 6px; }
   .site-nav a[aria-current="page"] { background: var(--card-bg); }
   
   @media (min-width: 900px) {
     .site-header { grid-template-columns: 1fr auto 1fr; }
-    #navToggle { display: none; }         /* hide hamburger on desktop */
     .site-nav { display: block; }
     .site-nav ul { justify-content: center; }
     .header-actions { justify-content: flex-end; }

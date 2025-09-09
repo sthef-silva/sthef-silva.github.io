@@ -16,8 +16,6 @@
       <p class="site-tagline">Details &amp; Skills Learned</p>
     </div>
 
-    <button id="navToggle" class="icon-button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">☰</button>
-
     <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
       <ul>
         <li><a href="index.html">Home/Resume</a></li>
@@ -61,14 +59,6 @@
   </footer>
 
   <script>
-    const navToggle = document.getElementById('navToggle');
-    const siteNav = document.getElementById('site-nav');
-    navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      siteNav.classList.toggle('open');
-    });
-
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>

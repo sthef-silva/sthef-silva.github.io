@@ -13,11 +13,9 @@
 
   <header class="site-header" role="banner">
     <div class="brand">
-      <h1 class="site-title">Sthefanny Silva</h1>
-      <p class="site-tagline">Information Technology · University of Central Florida</p>
+      <!-- <h1 class="site-title">Sthefanny Silva</h1> -->
+      <!-- <p class="site-tagline">Information Technology · University of Central Florida</p> -->
     </div>
-
-    <button id="navToggle" class="icon-button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">☰</button>
 
     <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
       <ul>
@@ -151,37 +149,6 @@
   </footer>
 
   <script>
-    // Hamburger nav toggle
-    const navToggle = document.getElementById('navToggle');
-    const siteNav = document.getElementById('site-nav');
-    navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      siteNav.classList.toggle('open');
-    });
-
-    // High contrast toggle
-    const contrastToggle = document.getElementById('contrastToggle');
-    const root = document.documentElement;
-    const CONTRAST_KEY = 'contrast:high';
-
-    function setContrast(on) {
-      if (on) {
-        root.classList.add('contrast-high');
-        contrastToggle.setAttribute('aria-pressed', 'true');
-      } else {
-        root.classList.remove('contrast-high');
-        contrastToggle.setAttribute('aria-pressed', 'false');
-      }
-    }
-
-    setContrast(localStorage.getItem(CONTRAST_KEY) === '1');
-    contrastToggle.addEventListener('click', () => {
-      const nowHigh = !root.classList.contains('contrast-high');
-      setContrast(nowHigh);
-      localStorage.setItem(CONTRAST_KEY, nowHigh ? '1' : '0');
-    });
-
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
