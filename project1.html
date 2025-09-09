@@ -25,10 +25,6 @@
         <li><a href="project2.html">Project 2</a></li>
       </ul>
     </nav>
-
-    <div class="header-actions">
-      <button id="contrastToggle" class="action-button" aria-pressed="false" aria-label="Toggle high contrast">High Contrast</button>
-    </div>
   </header>
 
   <main id="content" class="narrow" role="main">
@@ -71,20 +67,6 @@
       const expanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', String(!expanded));
       siteNav.classList.toggle('open');
-    });
-
-    const contrastToggle = document.getElementById('contrastToggle');
-    const root = document.documentElement;
-    const CONTRAST_KEY = 'contrast:high';
-    function setContrast(on){
-      if (on) { root.classList.add('contrast-high'); contrastToggle.setAttribute('aria-pressed','true'); }
-      else { root.classList.remove('contrast-high'); contrastToggle.setAttribute('aria-pressed','false'); }
-    }
-    setContrast(localStorage.getItem(CONTRAST_KEY) === '1');
-    contrastToggle.addEventListener('click', () => {
-      const nowHigh = !root.classList.contains('contrast-high');
-      setContrast(nowHigh);
-      localStorage.setItem(CONTRAST_KEY, nowHigh ? '1' : '0');
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
