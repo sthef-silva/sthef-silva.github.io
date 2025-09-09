@@ -1,0 +1,64 @@
+<!doctype html>
+<div>
+<h3><a href="project2.html">Project 2 Title</a></h3>
+<p><!-- TODO: 1–2 sentence description. --></p>
+<ul class="badges">
+<li>Skill A</li><li>Skill B</li><li>Skill C</li>
+</ul>
+</div>
+</article>
+</div>
+</section>
+</section>
+</main>
+
+
+<footer class="site-footer" role="contentinfo">
+<p>© <span id="year"></span> Sthefanny Silva • <a href="mailto:st889798@ucf.edu">st889798@ucf.edu</a></p>
+</footer>
+
+
+<script>
+// Hamburger nav toggle
+const navToggle = document.getElementById('navToggle');
+const siteNav = document.getElementById('site-nav');
+navToggle.addEventListener('click', () => {
+const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+navToggle.setAttribute('aria-expanded', String(!expanded));
+siteNav.classList.toggle('open');
+});
+
+
+// High contrast toggle
+const contrastToggle = document.getElementById('contrastToggle');
+const root = document.documentElement;
+const CONTRAST_KEY = 'contrast:high';
+
+
+function setContrast(on) {
+if (on) {
+root.classList.add('contrast-high');
+contrastToggle.setAttribute('aria-pressed', 'true');
+} else {
+root.classList.remove('contrast-high');
+contrastToggle.setAttribute('aria-pressed', 'false');
+}
+}
+
+
+// Load saved preference
+setContrast(localStorage.getItem(CONTRAST_KEY) === '1');
+
+
+contrastToggle.addEventListener('click', () => {
+const nowHigh = !root.classList.contains('contrast-high');
+setContrast(nowHigh);
+localStorage.setItem(CONTRAST_KEY, nowHigh ? '1' : '0');
+});
+
+
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

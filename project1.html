@@ -1,0 +1,78 @@
+<!doctype html>
+<li><a href="project1.html" aria-current="page">Project 1</a></li>
+<li><a href="project2.html">Project 2</a></li>
+</ul>
+</nav>
+<div class="header-actions">
+<button id="contrastToggle" class="action-button" aria-pressed="false" aria-label="Toggle high contrast">High Contrast</button>
+</div>
+</header>
+
+
+<main id="content" class="narrow" role="main">
+<article class="project">
+<header>
+<h2><!-- TODO: Project 1 Title --></h2>
+<p class="project-meta"><!-- TODO: Course or context, date range --></p>
+</header>
+
+
+<figure class="project-figure">
+<img src="assets/images/project1.jpg" alt="Image illustrating Project 1" />
+<figcaption><!-- TODO: Short alt description for context (optional if alt above is descriptive) --></figcaption>
+</figure>
+
+
+<section aria-labelledby="p1-desc">
+<h3 id="p1-desc">Description</h3>
+<p><!-- TODO: Paragraph describing problem, approach, outcome. --></p>
+</section>
+
+
+<section aria-labelledby="p1-skills">
+<h3 id="p1-skills">Skills Learned</h3>
+<ul>
+<li><!-- TODO: Skill 1 --></li>
+<li><!-- TODO: Skill 2 --></li>
+<li><!-- TODO: Skill 3 --></li>
+<li><!-- TODO: Skill 4 --></li>
+</ul>
+</section>
+</article>
+</main>
+
+
+<footer class="site-footer" role="contentinfo">
+<p>© <span id="year"></span> Sthefanny Silva</p>
+</footer>
+
+
+<script>
+const navToggle = document.getElementById('navToggle');
+const siteNav = document.getElementById('site-nav');
+navToggle.addEventListener('click', () => {
+const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+navToggle.setAttribute('aria-expanded', String(!expanded));
+siteNav.classList.toggle('open');
+});
+
+
+const contrastToggle = document.getElementById('contrastToggle');
+const root = document.documentElement;
+const CONTRAST_KEY = 'contrast:high';
+function setContrast(on){
+if (on) { root.classList.add('contrast-high'); contrastToggle.setAttribute('aria-pressed','true'); }
+else { root.classList.remove('contrast-high'); contrastToggle.setAttribute('aria-pressed','false'); }
+}
+setContrast(localStorage.getItem(CONTRAST_KEY) === '1');
+contrastToggle.addEventListener('click', () => {
+const nowHigh = !root.classList.contains('contrast-high');
+setContrast(nowHigh);
+localStorage.setItem(CONTRAST_KEY, nowHigh ? '1' : '0');
+});
+
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
