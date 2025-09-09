@@ -1,72 +1,214 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Résumé website for Sthefanny Silva (CIS 4004 Project 1)" />
+  <!-- absolute path prevents path confusion on GitHub Pages -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <title>Sthefanny Silva — Resume</title>
 </head>
 <body>
-<div>
-<h3><a href="project2.html">Project 2 Title</a></h3>
-<p><!-- TODO: 1–2 sentence description. --></p>
-<ul class="badges">
-<li>Skill A</li><li>Skill B</li><li>Skill C</li>
-</ul>
-</div>
-</article>
-</div>
-</section>
-</section>
-</main>
+  <a class="skip-link" href="#content">Skip to content</a>
 
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <h1 class="site-title">Sthefanny Silva</h1>
+      <p class="site-tagline">Information Technology · University of Central Florida</p>
+    </div>
 
-<footer class="site-footer" role="contentinfo">
-<p>© <span id="year"></span> Sthefanny Silva • <a href="mailto:st889798@ucf.edu">st889798@ucf.edu</a></p>
-</footer>
+    <button id="navToggle" class="icon-button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">☰</button>
 
+    <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home/Resume</a></li>
+        <li><a href="project1.html">Project 1</a></li>
+        <li><a href="project2.html">Project 2</a></li>
+      </ul>
+    </nav>
 
-<script>
-// Hamburger nav toggle
-const navToggle = document.getElementById('navToggle');
-const siteNav = document.getElementById('site-nav');
-navToggle.addEventListener('click', () => {
-const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-navToggle.setAttribute('aria-expanded', String(!expanded));
-siteNav.classList.toggle('open');
-});
+    <div class="header-actions">
+      <button id="contrastToggle" class="action-button" aria-pressed="false" aria-label="Toggle high contrast">High Contrast</button>
+      <!-- Replace this file or remove the button if you don't want it -->
+      <a class="action-button" href="assets/Sthefanny_Silva_Resume.pdf" download>Download PDF</a>
+    </div>
+  </header>
 
+  <main id="content" class="layout" role="main">
+    <!-- Sidebar (photo + contacts) -->
+    <aside class="sidebar" aria-labelledby="contact-heading">
+      <img src="assets/images/headshot.jpg" alt="Headshot of Sthefanny Silva" class="headshot" />
 
-// High contrast toggle
-const contrastToggle = document.getElementById('contrastToggle');
-const root = document.documentElement;
-const CONTRAST_KEY = 'contrast:high';
+      <section class="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> <a href="mailto:st889798@ucf.edu">st889798@ucf.edu</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/sthefannysilva7">linkedin.com/in/sthefannysilva7</a></li>
+        </ul>
+      </section>
 
+      <!-- UPDATED SKILLS for this project -->
+      <section class="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
+        <div class="skill-groups">
+          <article>
+            <h3>Web Languages</h3>
+            <ul>
+              <li>HTML5 (semantic structure)</li>
+              <li>CSS3 (variables, media queries)</li>
+              <li>JavaScript (vanilla UI toggles)</li>
+            </ul>
+          </article>
 
-function setContrast(on) {
-if (on) {
-root.classList.add('contrast-high');
-contrastToggle.setAttribute('aria-pressed', 'true');
-} else {
-root.classList.remove('contrast-high');
-contrastToggle.setAttribute('aria-pressed', 'false');
-}
-}
+          <article>
+            <h3>Frontend & Responsive</h3>
+            <ul>
+              <li>Mobile-first, responsive layout</li>
+              <li>Flexbox & CSS Grid</li>
+              <li>Reusable components (cards, badges)</li>
+            </ul>
+          </article>
 
+          <article>
+            <h3>Accessibility & QA</h3>
+            <ul>
+              <li>WCAG-aligned: color contrast, focus states</li>
+              <li>WAI-ARIA landmarks & labels</li>
+              <li>Reduced motion & High-contrast modes</li>
+              <li>W3C/WAVE validation</li>
+            </ul>
+          </article>
 
-// Load saved preference
-setContrast(localStorage.getItem(CONTRAST_KEY) === '1');
+          <article>
+            <h3>Tools & Workflow</h3>
+            <ul>
+              <li>Git & GitHub</li>
+              <li>GitHub Pages deployment</li>
+              <li>Browser DevTools debugging</li>
+            </ul>
+          </article>
 
+          <article>
+            <h3>Certifications</h3>
+            <ul>
+              <li>CompTIA (2)</li>
+              <li>TestOut CyberDefense Pro</li>
+              <li>TestOut IT Fundamentals Pro</li>
+              <li>Working toward: CCST/CCNA, Network+, Security+</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-contrastToggle.addEventListener('click', () => {
-const nowHigh = !root.classList.contains('contrast-high');
-setContrast(nowHigh);
-localStorage.setItem(CONTRAST_KEY, nowHigh ? '1' : '0');
-});
+      <!-- Remove this entire section if none -->
+      <section class="awards" aria-labelledby="awards-heading">
+        <h2 id="awards-heading">Awards & Honors</h2>
+        <p><!-- TODO: Add awards or delete this section. --></p>
+      </section>
+    </aside>
 
+    <!-- Main column -->
+    <section class="main-column">
+      <section aria-labelledby="objective-heading" class="card">
+        <h2 id="objective-heading">Professional Objective</h2>
+        <p><!-- TODO: Paste your 1–2 sentence objective here. --></p>
+      </section>
 
-// Year
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+      <section aria-labelledby="education-heading" class="card">
+        <h2 id="education-heading">Education</h2>
+        <article>
+          <h3>University of Central Florida — B.Sc. Information Technology</h3>
+          <p><strong>Minor:</strong> Financial Technology · <strong>GPA:</strong> 3.0</p>
+          <p><!-- TODO: Add graduation month/year (e.g., May 2026). --></p>
+        </article>
+      </section>
+
+      <section aria-labelledby="experience-heading" class="card">
+        <h2 id="experience-heading">Relevant Experience</h2>
+        <!-- TODO: Replace bullets/dates or remove section if none -->
+        <article class="job">
+          <h3>Data Analysis Intern — DEVCOM Army <span class="dates"><!-- Dates --></span></h3>
+          <ul>
+            <li>Implemented a prototype for customer data access using SQL, Python, and Apache Spark (Anaconda).</li>
+            <li>Performed exploratory data analysis to improve AI training datasets.</li>
+            <li>Built dashboards/prototypes to surface insights.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <h3>Retail Keyholder/Manager — Psycho Bunny <span class="dates"><!-- Dates --></span></h3>
+          <ul>
+            <li>Led scheduling, inventory, and loss prevention; trained team on product knowledge and POS.</li>
+            <li>Analyzed customer trends to drive sales and loyalty.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section aria-labelledby="projects-heading" class="card">
+        <h2 id="projects-heading">Projects</h2>
+        <div class="project-cards">
+          <article class="project-card">
+            <img src="assets/images/project1.jpg" alt="Screenshot representing Project 1" />
+            <div>
+              <h3><a href="project1.html">Project 1 Title</a></h3>
+              <p><!-- TODO: 1–2 sentence description. --></p>
+              <ul class="badges">
+                <li>HTML5</li><li>CSS3</li><li>Responsive</li><li>Accessibility</li><li>GitHub Pages</li>
+              </ul>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="assets/images/project2.jpg" alt="Screenshot representing Project 2" />
+            <div>
+              <h3><a href="project2.html">Project 2 Title</a></h3>
+              <p><!-- TODO: 1–2 sentence description. --></p>
+              <ul class="badges">
+                <li>HTML5</li><li>CSS3</li><li>Responsive</li><li>Accessibility</li><li>GitHub Pages</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>© <span id="year"></span> Sthefanny Silva • <a href="mailto:st889798@ucf.edu">st889798@ucf.edu</a></p>
+  </footer>
+
+  <script>
+    // Hamburger nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const siteNav = document.getElementById('site-nav');
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      siteNav.classList.toggle('open');
+    });
+
+    // High contrast toggle
+    const contrastToggle = document.getElementById('contrastToggle');
+    const root = document.documentElement;
+    const CONTRAST_KEY = 'contrast:high';
+
+    function setContrast(on) {
+      if (on) {
+        root.classList.add('contrast-high');
+        contrastToggle.setAttribute('aria-pressed', 'true');
+      } else {
+        root.classList.remove('contrast-high');
+        contrastToggle.setAttribute('aria-pressed', 'false');
+      }
+    }
+
+    setContrast(localStorage.getItem(CONTRAST_KEY) === '1');
+    contrastToggle.addEventListener('click', () => {
+      const nowHigh = !root.classList.contains('contrast-high');
+      setContrast(nowHigh);
+      localStorage.setItem(CONTRAST_KEY, nowHigh ? '1' : '0');
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
