@@ -183,6 +183,13 @@ Accessibility: visible focus, honors reduced motion
     background: #fff;
   }
 
+  /*Project 1: EDESim Demo Disclaimer - muted look*/
+  .disclaimer {
+    font-size: var(--size-1);
+    color: var(--muted);
+    margin: .25rem 0 .5rem;
+  }
+
   /* Print */
   @media print {
     .site-header, .site-footer, .project-cards img, .header-actions/*, #navToggle */ { display: none !important; }
