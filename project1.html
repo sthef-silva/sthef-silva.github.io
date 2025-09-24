@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Project 1 — Sthefanny Silva" />
+  <meta name="description" content="Event-Driven Enterprise Simulator (EDESim) — Sthefanny Silva" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
-  <title>Project 1 — Sthefanny Silva</title>
+  <title>Event-Driven Enterprise Simulator — Sthefanny Silva</title>
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
 
   <header class="site-header" role="banner">
     <div class="brand">
-      <h1 class="site-title">Project 1</h1>
+      <h1 class="site-title">Event-Driven Enterprise Simulator</h1>
       <p class="site-tagline">Details &amp; Skills Learned</p>
     </div>
 
     <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
       <ul>
-        <li><a class="nav-pill" href="index.html">Home/Resume</a></li>
-        <li><a class="nav-pill" href="project1.html" aria-current="page">Project 1</a></li>
+        <li><a class="nav-pill" href="index.html">Home|Resume</a></li>
+        <li><a class="nav-pill" href="project1.html" aria-current="page">EDESim</a></li>
         <li><a class="nav-pill" href="project2.html">Project 2</a></li>
       </ul>
     </nav>
@@ -29,26 +29,67 @@
     <article class="project">
       <header>
         <h2><!-- TODO: Project 1 Title --></h2>
-        <p class="project-meta"><!-- TODO: Course or context, date range --></p>
+        <h2>Event-Driven Enterprise Simulator</h2>
+        <p class="project-meta">Discrete-event simulation • 2025</p>
+          <!-- TODO: Course or context, date range --></p>
       </header>
 
       <figure class="project-figure">
         <img src="assets/images/project1.jpg" alt="Image illustrating Project 1" />
-        <figcaption><!-- Optional short caption for context. --></figcaption>
-      </figure>
+        <figcaption>Simulates enterprise workflows using an event queue, resources, and processing times.</figcaption>
+  </figure>
 
       <section aria-labelledby="p1-desc">
         <h3 id="p1-desc">Description</h3>
-        <p><!-- TODO: Paragraph describing problem, approach, outcome. --></p>
+        <p><!-- TODO: Paragraph describing problem, approach, outcome. -->
+          A discrete-event simulation of enterprise operations. The model drives entities through
+          queues and resources using an event list (arrivals, service start/finish, departures).
+          It reports throughput, average wait time, and resource utilization. Scenarios are
+          configurable to test different arrival/service distributions and staffing. 
+        </p>
       </section>
 
+        <!-- Try-it demo: use ONE of the two iframes below. -->
+        <!-- A) If you have a browser build deployed with GitHub Pages for this repo, keep this: -->
+        <section class="card" aria-labelledby="demo-heading">
+          <h3 id="demo-heading">Try the Simulator</h3>
+          <div class="embed">
+            <iframe
+              src="https://sthef-silva.github.io/An-Event-driven-Enterprise-Simulation/"
+              title="Event-Driven Enterprise Simulator"
+              loading="lazy">
+            </iframe>
+          </div>
+          <p><small>If the embed doesn’t load, <a class="nav-pill" href="https://sthef-silva.github.io/An-Event-driven-Enterprise-Simulation/" target="_blank" rel="noopener">open it in a new tab</a>.</small></p>
+        </section>
+
+      <!--HOW TO: README-->>
+      <section aria-labelledby="howto-heading" class="card">
+        <h3 id="howto-heading">How to Run</h3>
+        <ol>
+          <li>Clone the repo and follow the README instructions.</li>
+          <li>Run a sample scenario to generate metrics (throughput, wait time, utilization).</li>
+        </ol>
+        <p><a class="nav-pill" href="https://github.com/sthef-silva/An-Event-driven-Enterprise-Simulation" target="_blank" rel="noopener">View full README on GitHub</a></p>
+      </section>
+
+      <!--Skills-->>
       <section aria-labelledby="p1-skills">
-        <h3 id="p1-skills">Skills Learned</h3>
+        <h3 id="p1-skills">Skills</h3>
         <ul>
-          <li>Semantic HTML5 &amp; CSS3</li>
-          <li>Responsive layout (Flexbox/Grid)</li>
-          <li>Accessibility (WCAG/ARIA, focus management)</li>
-          <li>Version control with Git &amp; GitHub Pages</li>
+          <li>Java &amp; Java-based GUI</li>
+          <li>CSV data handling &amp; file I/O</li>
+          <li>Business rules &amp; formatting</li>
+          <li>Validation &amp; error handling</li>
+          <li>Testing/QA artifacts</li>
+        </ul>
+
+      <!--Java stack (use this instead if your project is Java)-->
+        <ul>
+          <li>Java (collections, OOP design, random distributions)</li>
+          <li>Discrete-event simulation design (event list, queues, resources)</li>
+          <li>Metrics &amp; reporting (throughput, wait time, utilization)</li>
+          <li>Version control &amp; workflow (Git, GitHub, GitHub Pages/Replit)</li>
         </ul>
       </section>
     </article>

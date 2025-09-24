@@ -18,15 +18,16 @@
 
     <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
       <ul>
-        <li><a class="nav-pill" href="index.html" aria-current="page">Home/Resume</a></li>
-        <li><a class="nav-pill" href="project1.html">Project 1</a></li>
+        <li><a class="nav-pill" href="index.html" aria-current="page">Home|Resume</a></li>
+        <li><a class="nav-pill" href="project1.html">EDESim</a></li>
         <li><a class="nav-pill" href="project2.html">Project 2</a></li>
       </ul>
     </nav>    
 
     <div class="header-actions">
         <!-- Download Resume Button -->
-      <a class="action-button" href="assets/Sthefanny_Silva_Resume.pdf" download>Download PDF</a>
+      <a class="action-button" href="assets/Sthefanny_Silva_Resume.pdf" download>Download as PDF</a>
+      <!-- TODO: Input pdf to download (idea provider converter if website keeps updating instead of updating the resume separately)-->>
     </div>
   </header>
 
@@ -85,11 +86,16 @@
           <article class="project-card">
             <img src="assets/images/project1.jpg" alt="Screenshot representing Project 1" />
             <div>
-              <h3><a href="project1.html">Project 1 Title</a></h3>
-              <p><!-- TODO: 1–2 sentence description. --></p>
+              <h3><a href="project1.html">Event-Driven Enterprise Simulator (EDESim)</a></h3>
+              <p><!-- TODO: 1–2 sentence description. -->
+                A discrete-event simulation of enterprise operations. The model drives entities through
+                queues and resources using an event list (arrivals, service start/finish, departures).
+                It reports throughput, average wait time, and resource utilization. Scenarios are
+                configurable to test different arrival/service distributions and staffing.
+              </p>
               <ul class="badges">
-                <li>HTML5</li><li>CSS3</li><li>Responsive</li><li>Accessibility</li><li>GitHub Pages</li>
-              </ul>
+                <li>Java</li><li>Event-Driven</li><li>CSV I/O</li><li>Discounts/Tax</li><li>Transactions Log</li>
+              </ul>              
             </div>
           </article>
           <article class="project-card">
@@ -106,26 +112,28 @@
       </section>
     </section>
 
-        <!-- UPDATED SKILLS for this project -->
+        <!-- SKILLS -->
         <section class="skills card" aria-labelledby="skills-heading">
             <h2 id="skills-heading">Skills</h2>
             <div class="skill-groups">
               <article>
                 <h3>Web Languages</h3>
                 <ul>
-                  <li>HTML (semantic structure)</li>
-                  <li>CSS (variables, media queries)</li>
                   <li>C</li>
+                  <li>CSS </li>
+                  <li>HTML </li>
                   <li>Java</li>
-                  <li>JavaScript (vanilla UI toggles)</li>
+                  <li>JavaScript </li>
+                  <li>MARIE </li>
                   <li>Python</li>
+                  <li>SQL</li>
                 </ul>
               </article>
     
               <article>
                 <h3>Tools & Workflow</h3>
                 <ul>
-                  <li>Git & GitHub</li>
+                  <li>GitHub</li>
                   <li>Cisco Packet Tracing</li>
                   <li>WireShark</li>
                 </ul>
