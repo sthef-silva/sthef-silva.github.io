@@ -12,13 +12,13 @@
 
   <header class="site-header" role="banner">
     <div class="brand">
+      <!-- Project 1 Title -->
       <h1 class="site-title">Event-Driven Enterprise Simulator</h1>
-      <p class="site-tagline">Details &amp; Skills Learned</p>
     </div>
 
     <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
       <ul>
-        <li><a class="nav-pill" href="index.html">Home|Resume</a></li>
+        <li><a class="nav-pill" href="index.html">Home</a></li>
         <li><a class="nav-pill" href="project1.html" aria-current="page">EDESim</a></li>
         <li><a class="nav-pill" href="project2.html">Project 2</a></li>
       </ul>
@@ -28,13 +28,11 @@
   <main id="content" class="narrow" role="main">
     <article class="project">
       <header>
-        <h2><!-- TODO: Project 1 Title --></h2>
-        <h2>Event-Driven Enterprise Simulator</h2>
-        <p class="project-meta">Discrete-event simulation • 2025</p>
-          <!-- TODO: Course or context, date range --></p>
+        <h2>Discrete-event simulation • 2025</h2>
       </header>
 
       <figure class="project-figure">
+        <!--TODO: Upload Images-->>
         <img src="assets/images/project1.jpg" alt="Image illustrating Project 1" />
         <figcaption>Simulates enterprise workflows using an event queue, resources, and processing times.</figcaption>
   </figure>
@@ -42,10 +40,10 @@
       <section aria-labelledby="p1-desc">
         <h3 id="p1-desc">Description</h3>
         <p><!-- TODO: Paragraph describing problem, approach, outcome. -->
-          A discrete-event simulation of enterprise operations. The model drives entities through
-          queues and resources using an event list (arrivals, service start/finish, departures).
-          It reports throughput, average wait time, and resource utilization. Scenarios are
-          configurable to test different arrival/service distributions and staffing. 
+          This project simulates a checkout flow for a tiny e-store (“Nile Dot Com”). 
+          The app guides the user step-by-step: search by Item ID, confirm availability, add to cart (max 5 distinct items), 
+          apply quantity-based discounts and 6% tax, and show a final invoice. Each checkout appends a dated record to transactions.csv. 
+          The focus is event-driven GUI behavior—buttons enable/disable and error dialogs appear for not-found, out-of-stock, or insufficient quantity. 
         </p>
       </section>
 
@@ -55,7 +53,7 @@
           <h3 id="demo-heading">Try the Simulator</h3>
           <div class="embed">
             <iframe
-              src="https://sthef-silva.github.io/An-Event-driven-Enterprise-Simulation/"
+              src="https://sthef-silva.github.io/An-Event-driven-Enterprise-Simulation/web-demo/"
               title="Event-Driven Enterprise Simulator"
               loading="lazy">
             </iframe>
@@ -63,7 +61,7 @@
           <p><small>If the embed doesn’t load, <a class="nav-pill" href="https://sthef-silva.github.io/An-Event-driven-Enterprise-Simulation/" target="_blank" rel="noopener">open it in a new tab</a>.</small></p>
         </section>
 
-      <!--HOW TO: README-->>
+      <!--HOW TO: README-->
       <section aria-labelledby="howto-heading" class="card">
         <h3 id="howto-heading">How to Run</h3>
         <ol>
@@ -73,7 +71,7 @@
         <p><a class="nav-pill" href="https://github.com/sthef-silva/An-Event-driven-Enterprise-Simulation" target="_blank" rel="noopener">View full README on GitHub</a></p>
       </section>
 
-      <!--Skills-->>
+      <!--Skills-->
       <section aria-labelledby="p1-skills">
         <h3 id="p1-skills">Skills</h3>
         <ul>
