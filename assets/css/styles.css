@@ -72,6 +72,9 @@ Accessibility: visible focus, honors reduced motion
   }
   .icon-button { line-height: 1; }
   .header-actions { display: flex; gap: .5rem; }
+  /* ensures the anchor-style button isn't underlined */
+  .action-button { text-decoration: none; display: inline-block; }
+
   
   /* Nav */
   .site-nav { display: block; }
@@ -85,24 +88,36 @@ Accessibility: visible focus, honors reduced motion
   color: var(--link);
   background: var(--card-bg);
   border: 1px solid rgba(0,0,0,.12);
-  padding: .45rem .8rem;
-  border-radius: 999px;         /* pill */
+  padding: .5rem .75rem;
+  border-radius: 8px;         /* pill */
   display: inline-block;
-  box-shadow: 0 1px 0 rgba(0,0,0,.05) inset;
-  transition: transform .06s ease, box-shadow .2s ease, background-color .2s ease;
+  /* box-shadow: 0 1px 0 rgba(0,0,0,.05) inset; */
+  /* transition: transform .06s ease, box-shadow .2s ease, background-color .2s ease; */
 }
-.site-nav a.nav-pill:hover {
+/* .site-nav a.nav-pill:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 14px rgba(0,0,0,.08);
 }
 .site-nav a.nav-pill:active {
   transform: translateY(0);
   box-shadow: 0 2px 6px rgba(0,0,0,.10);
-}
+} */
 /* current page */
-.site-nav a.nav-pill[aria-current="page"] {
+/* .site-nav a.nav-pill[aria-current="page"] {
   background: var(--beige);
   border-color: rgba(0,0,0,.18);
+  font-weight: 600;
+} */
+ 
+.site-nav a.nav-pill[aria-current="page"] { font-weight: 600; }
+ /* keep same look on hover/active (no movement) */
+.site-nav a.nav-pill:hover,
+.site-nav a.nav-pill:active {
+  transform: none;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05) inset;
+}
+/* subtle emphasis for the current page (same bubble) */
+.site-nav a.nav-pill[aria-current="page"] {
   font-weight: 600;
 }
 
