@@ -13,14 +13,14 @@
 
   <header class="site-header" role="banner">
     <div class="brand">
-      <h1 class="site-title">Sthefanny Silva</h1>
+      <h1 class="site-title">Sthefanny Silva Resume</h1>
     </div>
 
     <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
       <ul>
-        <li><a class="nav-pill" href="index.html" aria-current="page">Home|Resume</a></li>
+        <li><a class="nav-pill" href="index.html" aria-current="page">Home</a></li>
         <li><a class="nav-pill" href="project1.html">EDESim</a></li>
-        <li><a class="nav-pill" href="project2.html">Project 2</a></li>
+        <li><a class="nav-pill" href="project2.html">TAM</a></li>
       </ul>
     </nav>    
 
@@ -56,15 +56,18 @@
         <article>
           <h3>University of Central Florida — B.S. Information Technology</h3>
           <p><strong>Minor:</strong> Financial Technology · <strong>GPA:</strong> 3.0</p>
-          <p><!-- TODO: Add graduation month/year (e.g., May 2026). --></p>
+          <p><strong>Expected Graduation:</strong> <time datetime="2026-05">May 2026</time></p>
         </article>
       </section>
 
       <section aria-labelledby="experience-heading" class="card">
         <h2 id="experience-heading">Relevant Experience</h2>
-        <!-- TODO: Replace bullets/dates or remove section if none -->
+
         <article class="job">
-          <h3>Data Analysis Intern — DEVCOM Army <span class="dates"><!-- Dates --></span></h3>
+          <h3>Data Analysis Intern — DEVCOM Army</h3>
+            <p class="job-meta">
+            <time datetime="2024-05">May 2024</time> – <time datetime="2024-08">Aug 2024</time>
+            </p>
           <ul>
             <li>Implemented a prototype for customer data access using SQL, Python, and Apache Spark (Anaconda).</li>
             <li>Performed exploratory data analysis to improve AI training datasets.</li>
@@ -72,7 +75,10 @@
           </ul>
         </article>
         <article class="job">
-          <h3>Retail Keyholder/Manager — Psycho Bunny <span class="dates"><!-- Dates --></span></h3>
+          <h3>Retail Keyholder/Manager — Psycho Bunny</h3>
+            <p class="job-meta">
+            <time datetime="2022-06">Jun 2022</time> – <span aria-label="Present">Present</span>
+            </p>
           <ul>
             <li>Led scheduling, inventory, and loss prevention; trained team on product knowledge and POS.</li>
             <li>Analyzed customer trends to drive sales and loyalty.</li>
@@ -87,8 +93,9 @@
             <img src="assets/images/project1.jpg" alt="Screenshot representing Project 1" />
             <div>
               <h3><a href="project1.html">Event-Driven Enterprise Simulator (EDESim)</a></h3>
-              <p><!-- TODO: 1–2 sentence description. -->
-                A discrete-event simulation of enterprise operations. A small point-of-sale simulation for “Nile Dot Com.” 
+              <p>
+                A discrete-event simulation of enterprise operations. 
+                A small point-of-sale simulation for "Nile Dot Com." 
                 Users look up items by ID from an inventory file, validate stock and quantity, add up to five items to a cart, 
                 apply tiered discounts and 6% tax, generate an invoice, and log each order to transactions.csv with a unique timestamped ID.
               </p>
@@ -99,11 +106,12 @@
           </article>
           <article class="project-card">
             <img src="assets/images/project2.jpg" alt="Screenshot representing Project 2" />
-            <div>
-              <h3><a href="project2.html">Project 2 Title</a></h3>
-              <p><!-- TODO: 1–2 sentence description. --></p>
+             <div>
+              <h3><a href="project2.html">Tiny Accumulator Machine (TAM)</a></h3>
+              <p>Implemented a Tiny Accumulator Machine (TAM) virtual machine in C using a two-word instruction set (opcode + operand). 
+                The VM tracks PC/ACC/RAM state and executes arithmetic and control-flow instructions, loading user programs and stepping through execution with clear state updates.</p>
               <ul class="badges">
-                <li>HTML5</li><li>CSS3</li><li>Responsive</li><li>Accessibility</li><li>GitHub Pages</li>
+                <li>C</li><li>Virtual Machine</li><li>Two-Word ISA</li><li>Emulator</li><li>File I/O</li>
               </ul>
             </div>
           </article>
