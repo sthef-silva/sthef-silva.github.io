@@ -3,22 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Project 2 — Sthefanny Silva" />
+  <meta name="description" content="Tiny Accumulator Machine (TAM) — Two-Word Instruction VM in C — Sthefanny Silva" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
-  <title>Project 2 — Sthefanny Silva</title>
+  <title>Tiny Accumulator Machine (TAM) — Sthefanny Silva</title>
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
 
   <header class="site-header" role="banner">
     <div class="brand">
-      <h1 class="site-title">Project 2</h1>
-      <p class="site-tagline">Details &amp; Skills Learned</p>
+      <h1 class="site-title">Tiny Accumulator Machine (TAM)</h1>
     </div>
 
     <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
       <ul>
-        <li><a class="nav-pill" href="index.html">Home|Resume</a></li>
+        <li><a class="nav-pill" href="index.html">Home</a></li>
         <li><a class="nav-pill" href="project1.html">EDESim</a></li>
         <li><a class="nav-pill" href="project2.html" aria-current="page">Project 2</a></li>
       </ul>
@@ -28,27 +27,62 @@
   <main id="content" class="narrow" role="main">
     <article class="project">
       <header>
-        <h2><!-- TODO: Project 2 Title --></h2>
-        <p class="project-meta"><!-- TODO: Course or context, date range --></p>
+        <h2>Systems Programming • 2025</h2>
       </header>
 
       <figure class="project-figure">
-        <img src="assets/images/project2.jpg" alt="Image illustrating Project 2" />
-        <figcaption><!-- Optional short caption for context. --></figcaption>
+        <!-- Replace with a TAM screenshot/diagram -->
+        <img src="assets/images/project2.jpg" alt="Diagram of Tiny Accumulator Machine: PC, ACC, RAM, and instruction format" />
+        <figcaption>Two-word instruction virtual machine: <em>opcode</em> + <em>operand</em>, with PC, ACC, RAM, and basic control flow.</figcaption>
       </figure>
 
-      <section aria-labelledby="p2-desc">
+      <section aria-labelledby="p2-desc" class="card">
         <h3 id="p2-desc">Description</h3>
-        <p><!-- TODO: Paragraph describing problem, approach, outcome. --></p>
+        <p>
+          A minimal virtual machine written in C that executes a Tiny Accumulator Machine (TAM)
+          instruction set. Each instruction is two words—an <strong>opcode</strong> and an <strong>operand</strong>.
+          The VM maintains a <strong>program counter (PC)</strong>, <strong>accumulator (ACC)</strong>, and
+          memory. It supports arithmetic and control-flow (e.g., <code>LOAD</code>, <code>STORE</code>,
+          <code>ADD</code>, <code>SUB</code>, <code>JMP</code>, <code>JZ</code>) and halts on <code>HALT</code>.
+          Programs are loaded from a simple text/binary format and executed step-by-step with clear
+          state updates.
+        </p>
       </section>
 
-      <section aria-labelledby="p2-skills">
-        <h3 id="p2-skills">Skills Learned</h3>
+      <!-- Try-it demo (browser-hosted page in the TAM repo) -->
+      <section class="card" aria-labelledby="demo-heading">
+        <h3 id="demo-heading">Try the Simulator</h3>
+        <p class="disclaimer" role="note">“Prototype demo – does not reflect final implementation or performance.”</p>
+        <div class="embed">
+          <iframe
+            src="https://sthef-silva.github.io/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/web-demo/"
+            title="TAM — Web Demo"
+            loading="lazy">
+          </iframe>
+        </div>
+        <p><small>If the embed doesn’t load, <a class="nav-pill" href="https://sthef-silva.github.io/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/web-demo/" target="_blank" rel="noopener">open it in a new tab</a>.</small></p>
+      </section>
+
+      <!-- How-to (keep brief; readers can use the README for full details) -->
+      <section aria-labelledby="howto-heading" class="card">
+        <h3 id="howto-heading">How to Run (Repo)</h3>
+        <ol>
+          <li>Clone the repo and follow the README instructions.</li>
+          <li>Build the VM with <code>gcc</code> and run a sample program.</li>
+        </ol>
+        <p><a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C" target="_blank" rel="noopener">View source &amp; README on GitHub</a></p>
+      </section>
+
+      <section aria-labelledby="p2-skills" class="card">
+        <h3 id="p2-skills">Skills Used &amp; Learned</h3>
         <ul>
-          <li>Semantic HTML5 &amp; CSS3</li>
-          <li>Responsive layout (Flexbox/Grid)</li>
-          <li>Accessibility (WCAG/ARIA, focus management)</li>
-          <li>Version control with Git &amp; GitHub Pages</li>
+          <li>C programming (pointers, structs, file I/O)</li>
+          <li>Virtual machine &amp; ISA design (two-word instructions)</li>
+          <li>Execution state: PC, ACC, memory, halt conditions</li>
+          <li>Control flow &amp; branching (JMP/JZ), arithmetic ops</li>
+          <li>Input parsing (program loader) and error handling</li>
+          <li>CLI UX &amp; documentation (README, examples)</li>
+          <li>Version control &amp; hosting (Git, GitHub Pages iframe demo)</li>
         </ul>
       </section>
     </article>
