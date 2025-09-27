@@ -189,6 +189,39 @@ Accessibility: visible focus, honors reduced motion
     color: var(--muted);
     margin: .25rem 0 .5rem;
   }
+  
+  /* Adaptable to any screen */
+.layout,
+.narrow {
+  max-width: 1100px;            /* keeps lines readable on big monitors */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Prevent accidental horizontal scrolling on small screens */
+html, body { max-width: 100%; overflow-x: hidden; }
+img, iframe { max-width: 100%; height: auto; display: block; }
+
+/* Nav: allow wrapping and center it */
+.site-nav ul { flex-wrap: wrap; justify-content: center; }
+
+/* Header collapses nicely on phones */
+@media (max-width: 720px) {
+  .site-header {
+    grid-template-columns: 1fr;   /* stack brand, nav, actions */
+    text-align: center;
+    gap: .5rem;
+  }
+  .header-actions { justify-content: center; }
+}
+
+/* Two-column layout → single column on narrow screens (extra-safe) */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr !important; }  /* override if set elsewhere */
+  .sidebar { margin-bottom: 1rem; }
+}
 
   /* Print */
   @media print {
