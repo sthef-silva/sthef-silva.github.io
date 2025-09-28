@@ -39,76 +39,83 @@
       <section aria-labelledby="p2-desc" class="card">
         <h3 id="p2-desc">Description</h3>
         <p>
-          A minimal virtual machine written in C that executes a Tiny Accumulator Machine (TAM)
-          instruction set. Each instruction is two words—an <strong>opcode</strong> and an <strong>operand</strong>.
-          The VM maintains a <strong>program counter (PC)</strong>, <strong>accumulator (ACC)</strong>, and
-          memory. It supports arithmetic and control-flow (e.g., <code>LOAD</code>, <code>STORE</code>,
-          <code>ADD</code>, <code>SUB</code>, <code>JMP</code>, <code>JZ</code>) and halts on <code>HALT</code>.
-          Programs are loaded from a simple text/binary format and executed step-by-step with clear
-          state updates.
+            A minimal virtual machine written in C that executes a Tiny Accumulator Machine (TAM)
+            instruction set. Each instruction is two words—an opcode and an operand.
+            The VM maintains a program counter (PC), accumulator (ACC), and
+            memory. It supports arithmetic and control-flow (e.g., <code>LOAD</code>, <code>STORE</code>,
+            <code>ADD</code>, <code>SUB</code>, <code>JMP</code>, <code>JZ</code>) and halts on <code>HALT</code>.
+            Programs are loaded from a simple text/binary format and executed step-by-step with clear
+            state updates.
         </p>
       </section>
 
       <!-- Try-it demo (browser-hosted page in the TAM repo) -->
        <section class="card" aria-labelledby="demo-heading">
-        <h3 id="demo-heading">Try the Simulator</h3>
-        <p class="disclaimer" role="note">“Prototype demo – does not reflect final implementation or performance.”</p>
+  <h3 id="demo-heading">Try the Simulator</h3>
+  <p class="disclaimer" role="note">
+    Prototype demo — shows the input <em>elf.txt</em> and the output <em>programoutput.txt</em> from the TAM repo.
+  </p>
 
-        <div style="display:flex; gap:.5rem; align-items:center; margin:.25rem 0 1rem;">
-          <label for="program-select"><strong>Program file:</strong></label>
-          <select id="program-select">
-            <!-- Make these match real files in your repo -->
-            <option value="programoutput.txt">programoutput.txt</option>
-            <!-- <option value="programs/add.txt">programs/add.txt</option> -->
-          </select>
-          <a id="open-program" class="nav-pill" href="#" target="_blank" rel="noopener">Open on GitHub</a>
-        </div>
+  <!-- File selector (already pre-set to elf.txt) -->
+  <div style="display:flex; gap:.5rem; align-items:center; margin:.25rem 0 1rem;">
+    <label for="program-select"><strong>Program file:</strong></label>
+    <select id="program-select">
+      <option value="elf.txt">elf.txt</option>
+      <!-- If you add more inputs later, add more <option> rows here -->
+    </select>
+    <a id="open-program" class="nav-pill" href="#" target="_blank" rel="noopener">Open on GitHub</a>
+  </div>
 
-        <h4>Program</h4>
-        <pre id="tam-program" class="codeblock">Loading program text…</pre>
+  <h4>Program (elf.txt)</h4>
+  <pre id="tam-program" class="codeblock">Loading elf.txt…</pre>
 
-        <p style="margin-top:.75rem">
-          <a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/blob/main/tinyvm.c" target="_blank" rel="noopener">View tinyvm.c</a>
-          <a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C" target="_blank" rel="noopener">Open repo</a>
-        </p>
-      </section>
+  <h4 style="margin-top:1rem;">Output (programoutput.txt)</h4>
+  <pre id="tam-output" class="codeblock">Loading programoutput.txt…</pre>
 
-      <script>
-        const RAW_BASE = "https://raw.githubusercontent.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/main";
-        const OUTPUT_FILE = "PROGRAMOUTPUT.txt";   // <-- exact case
-        const DEFAULT_PROGRAM_FILE = "programoutput.txt"; // <-- must match an <option> above
+  <p style="margin-top:.75rem">
+    <a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/blob/main/tinyvm.c" target="_blank" rel="noopener">View tinyvm.c</a>
+  </p>
+</section>
 
-        const $programPre = document.getElementById("tam-program");
-        const $outputPre  = document.getElementById("tam-output");
-        const $select     = document.getElementById("program-select");
-        const $openLink   = document.getElementById("open-program");
+<script>
+  // -------- configure paths (case-sensitive, match your repo) --------
+  const RAW_BASE = "https://raw.githubusercontent.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/main";
+  const INPUT_FILE  = "elf.txt";             // the program input
+  const OUTPUT_FILE = "programoutput.txt";   // the generated output
+  // -------------------------------------------------------------------
 
-        async function loadInto(id, url){
-          const el = document.getElementById(id);
-          try{
-            const res = await fetch(url, { cache: "no-store" });
-            if(!res.ok) throw new Error(res.status + " " + res.statusText);
-            el.textContent = (await res.text()).trim();
-          }catch(err){
-            el.textContent = `Could not load ${url}\n${err.message}`;
-          }
-        }
+  const $programPre = document.getElementById("tam-program");
+  const $outputPre  = document.getElementById("tam-output");
+  const $select     = document.getElementById("program-select");
+  const $openLink   = document.getElementById("open-program");
 
-        function setProgram(fileName){
-          loadInto("tam-program", `${RAW_BASE}/${fileName}`);
-          $openLink.href = `https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/blob/main/${fileName}`;
-        }
+  async function loadInto(id, url){
+    const el = document.getElementById(id);
+    try{
+      const res = await fetch(url, { cache: "no-store" });
+      if(!res.ok) throw new Error(res.status + " " + res.statusText);
+      el.textContent = (await res.text()).trim();
+    }catch(err){
+      el.textContent = `Could not load ${url}\n${err.message}`;
+    }
+  }
 
-        (function init(){
-          for (const opt of $select.options){
-            if(opt.value === DEFAULT_PROGRAM_FILE){ $select.value = DEFAULT_PROGRAM_FILE; break; }
-          }
-          setProgram($select.value);
-          loadInto("tam-output", `${RAW_BASE}/${OUTPUT_FILE}`);
-        })();
+  function setProgram(fileName){
+    loadInto("tam-program", `${RAW_BASE}/${fileName}`);
+    $openLink.href = `https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/blob/main/${fileName}`;
+  }
 
-        $select.addEventListener("change", () => setProgram($select.value));
-      </script>
+  (function init(){
+    // ensure dropdown shows elf.txt by default
+    for (const opt of $select.options){
+      if(opt.value === INPUT_FILE){ $select.value = INPUT_FILE; break; }
+    }
+    setProgram($select.value);
+    loadInto("tam-output", `${RAW_BASE}/${OUTPUT_FILE}`);
+  })();
+
+  $select.addEventListener("change", () => setProgram($select.value));
+</script>
 
 
       <!-- How-to (keep brief; readers can use the README for full details) -->
