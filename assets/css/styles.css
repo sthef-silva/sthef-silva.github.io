@@ -262,3 +262,17 @@ html,body{ max-width:100%; overflow-x:hidden; }
   line-height:1.45;
   border:1px solid rgba(0,0,0,.2);
 }
+
+/* === Header: move all nav buttons to the right (site-wide) === */
+.site-header{
+  display:flex;                 /* override earlier grid */
+  justify-content:space-between;/* brand on left, nav on right */
+  align-items:center;
+}
+
+/* keep the pills as a horizontal row, pushed to the right */
+.site-nav ul{
+  display:flex;
+  gap:.75rem;
+  justify-content:flex-end;     /* right-align the list inside nav */
+}
