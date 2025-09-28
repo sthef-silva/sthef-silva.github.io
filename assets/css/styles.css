@@ -285,11 +285,26 @@ html,body{ max-width:100%; overflow-x:hidden; }
 
 @media (max-width:720px){
   .site-header{
-    flex-wrap:wrap;
-    justify-content:center;
-    text-align:center;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
   }
+
   .brand{ flex-basis:100%; }
-  .site-nav{ margin-left:0; }
-  .header-actions{ margin-left:0; }
+
+  /* Make nav take a full row and center its items */
+  .site-nav{
+    margin-left: 0;
+    flex-basis: 100%;
+  }
+  .site-nav ul{
+    justify-content: center;   /* was flex-end on desktop */
+  }
+
+  /* Make the right-side buttons (e.g., Download Resume) center on their own row */
+  .header-actions{
+    margin-left: 0;            /* remove right-leaning offset */
+    flex-basis: 100%;          /* new line under nav */
+    justify-content: center;   /* center the buttons */
+  }
 }
