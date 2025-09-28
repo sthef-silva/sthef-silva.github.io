@@ -249,10 +249,16 @@ html,body{ max-width:100%; overflow-x:hidden; }
   margin-inline: auto;
 }
 
-/* Resume headshot */
-/* .headshot{ 
-  width:100%; 
-  height: fit-content;
-  border-radius:8px; 
-  object-fit:cover; 
-} */
+/* -------------------- Project 2 Demo -------------------- */
+.codeblock{
+  background:#111;
+  color:#eee;
+  padding:1rem;
+  border-radius:10px;
+  overflow:auto;
+  max-height:420px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size:14px;
+  line-height:1.45;
+  border:1px solid rgba(0,0,0,.2);
+}
