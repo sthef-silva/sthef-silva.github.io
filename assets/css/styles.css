@@ -140,16 +140,29 @@ html,body{ max-width:100%; overflow-x:hidden; }
   border:1px solid rgba(0,0,0,.06);
 }
 /* --- Headshot image fix --- */
-.headshot {
-  width: 350px;       /*  width */
-  height: 350px;      /*  height */
-  object-fit: cover;  /* crops nicely into a square */
+
+.headshot{
+  width: min(100%, 350px);  /* never exceed the sidebar; cap at 350px */
+  aspect-ratio: 1 / 1;      /* keep it square without hard-coding height */
+  object-fit: cover;        /* crop nicely */
   border-radius: 12px;
 
-  display: block;        /* makes margin work */
-  margin-left: auto;     /* push from left */
-  margin-right: auto;    /* push from right */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;       /* centers it horizontally */
 }
+
+/* .headshot {
+  width: 350px;       
+  height: 350px;      
+  object-fit: cover;  
+  border-radius: 12px;
+
+  display: block;        
+  margin-left: auto;     
+  margin-right: auto;    
+} */
+/*  width */ /*  height */ /* crops nicely into a square */ /* makes margin work */ /* push from left */  /* push from right */
 
 .contact-list{ list-style:none; padding:0; margin:0; }
 .contact-list li{ margin:.25rem 0; }
@@ -268,8 +281,12 @@ html,body{ max-width:100%; overflow-x:hidden; }
 }
 
 .brand { order: 1 !important; }
-.site-nav { order: 2 !important; margin-left: auto !important; }  /* nav pushes to the right */
-.header-actions { order: 3 !important; display: flex !important; gap: .5rem; }  /* show it */
+.site-nav { margin-left: 0 !important; }     /* stop pushing the nav to the edge */
+.header-actions {
+  display: flex !important;
+  gap: .5rem !important;
+  margin-left: auto !important;              /* this pushes the actions to the far right */
+}
 
 /* nav row */
 .site-nav ul {
