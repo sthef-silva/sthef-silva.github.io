@@ -145,9 +145,7 @@ html,body{ max-width:100%; overflow-x:hidden; }
   width: 350px;       /*  width */
   height: 350px;      /*  height */
   object-fit: cover;  /* crops nicely into a square */
-  border-radius: 16px;
-  display: block;
-  margin: 0 auto 1rem;     /* centers it in the sidebar */
+  border-radius: 12px;
 }
 
 .contact-list{ list-style:none; padding:0; margin:0; }
