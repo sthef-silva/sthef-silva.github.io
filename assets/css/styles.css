@@ -86,9 +86,14 @@ html,body{ max-width:100%; overflow-x:hidden; }
 }
 
 /* -------------------- Nav -------------------- */
-.site-nav ul{
-  list-style:none; margin:0; padding:0;
-  display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap;
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: .5rem;
+  justify-content: flex-end;   /* push nav to the right */
+  flex-wrap: wrap;
 }
 .site-nav a.nav-pill{
   text-decoration:none; color:var(--link);
