@@ -143,9 +143,12 @@ html,body{ max-width:100%; overflow-x:hidden; }
 .headshot {
   width: 350px;       /*  width */
   height: 350px;      /*  height */
-  align-items: center;
   object-fit: cover;  /* crops nicely into a square */
   border-radius: 12px;
+
+  display: block;        /* makes margin work */
+  margin-left: auto;     /* push from left */
+  margin-right: auto;    /* push from right */
 }
 
 .contact-list{ list-style:none; padding:0; margin:0; }
@@ -260,15 +263,15 @@ html,body{ max-width:100%; overflow-x:hidden; }
 
 /* -------------------- NAV OVERRIDES -------------------- */
 .site-header {
-  display: flex !important;           /* override earlier grid */
+  display: flex !important;
   align-items: center !important;
 }
 
 .brand { order: 1 !important; }
-.header-actions { order: 2 !important; display: none !important; } /* hide for now */
-.site-nav { order: 3 !important; margin-left: auto !important; }
+.site-nav { order: 2 !important; margin-left: auto !important; }  /* nav pushes to the right */
+.header-actions { order: 3 !important; display: flex !important; gap: .5rem; }  /* show it */
 
-/* nav list = horizontal row and right-aligned */
+/* nav row */
 .site-nav ul {
   display: flex !important;
   gap: .75rem !important;
@@ -276,3 +279,4 @@ html,body{ max-width:100%; overflow-x:hidden; }
   margin: 0 !important;
   padding: 0 !important;
 }
+
