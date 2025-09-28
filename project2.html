@@ -58,7 +58,7 @@
           <label for="program-select"><strong>Program file:</strong></label>
           <select id="program-select">
             <!-- Make these match real files in your repo -->
-            <option value="program.txt">program.txt</option>
+            <option value="programoutput.txt">programoutput.txt</option>
             <!-- <option value="programs/add.txt">programs/add.txt</option> -->
           </select>
           <a id="open-program" class="nav-pill" href="#" target="_blank" rel="noopener">Open on GitHub</a>
@@ -79,7 +79,7 @@
       <script>
         const RAW_BASE = "https://raw.githubusercontent.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/main";
         const OUTPUT_FILE = "PROGRAMOUTPUT.txt";   // <-- exact case
-        const DEFAULT_PROGRAM_FILE = "program.txt"; // <-- must match an <option> above
+        const DEFAULT_PROGRAM_FILE = "programoutput.txt"; // <-- must match an <option> above
 
         const $programPre = document.getElementById("tam-program");
         const $outputPre  = document.getElementById("tam-output");
