@@ -51,68 +51,40 @@
 
       <!-- Try-it demo (browser-hosted page in the TAM repo) -->
        <section class="card" aria-labelledby="demo-heading">
-        <h3 id="demo-heading">Try the Simulator</h3>
-        <p class="disclaimer" role="note">
-          This prototype loads the program file <em>elf.txt</em> from the repo. Run the VM locally and upload or paste the output below.
-        </p>
+  <h3 id="demo-heading">Demo</h3>
+  <p class="disclaimer" role="note">
+    This demo shows the <em>elf.txt</em> input program and a captured run of the VM in console (with user inputs).
+  </p>
 
-        <!-- Program (elf.txt from GitHub) -->
-        <h4>Program (elf.txt)</h4>
-        <pre id="tam-program" class="codeblock">Loading elf.txt…</pre>
-        <p style="margin:.5rem 0">
-          <a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/blob/main/elf.txt" target="_blank" rel="noopener">Open elf.txt on GitHub</a>
-        </p>
+  <!-- Input file -->
+  <h4>Program (elf.txt)</h4>
+  <pre id="tam-program" class="codeblock">Loading elf.txt…</pre>
+  <p><a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/blob/main/elf.txt" target="_blank">Open elf.txt on GitHub</a></p>
 
-        <hr style="border:none; border-top:1px solid rgba(0,0,0,.08); margin:1rem 0" />
+  <!-- Captured run -->
+  <h4 style="margin-top:1rem;">Execution Trace</h4>
+  <pre id="tam-trace" class="codeblock">Loading run log…</pre>
+  <p><a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/blob/main/run_example.txt" target="_blank">View full run log</a></p>
+</section>
 
-        <!-- Output (visitor supplies) -->
-        <h4>Output (from your run)</h4>
-        <div style="display:flex; gap:.5rem; flex-wrap:wrap; align-items:center; margin:.25rem 0 1rem;">
-          <label class="nav-pill" style="cursor:pointer;">
-            <input id="upload-output" type="file" accept=".txt" hidden>
-            Upload output .txt
-          </label>
-          <button id="clear-output" class="nav-pill" type="button">Clear</button>
-        </div>
-        <textarea id="tam-output-ta" rows="10" style="width:100%; max-width:100%; border-radius:10px; padding:.75rem; font-family:ui-monospace,Consolas,Menlo,monospace; font-size:14px; border:1px solid rgba(0,0,0,.2);" placeholder="Paste your console output here, or upload a .txt file."></textarea>
+<script>
+  const RAW_BASE = "https://raw.githubusercontent.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/main";
 
-        <p style="margin-top:.75rem">
-          <a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C" target="_blank" rel="noopener">Open TAM repository</a>
-          <a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/blob/main/tinyvm.c" target="_blank" rel="noopener">View tinyvm.c</a>
-        </p>
-      </section>
+  async function loadInto(id, path){
+    const el = document.getElementById(id);
+    try{
+      const res = await fetch(`${RAW_BASE}/${path}`, { cache:"no-store" });
+      if(!res.ok) throw new Error(res.status + " " + res.statusText);
+      el.textContent = (await res.text()).trim();
+    }catch(err){
+      el.textContent = `Could not load ${path}\n${err.message}`;
+    }
+  }
 
-      <script>
-        // Load elf.txt from your repo (case-sensitive path)
-        const RAW_BASE = "https://raw.githubusercontent.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/main";
-        async function loadInto(id, url){
-          const el = document.getElementById(id);
-          try{
-            const res = await fetch(url, { cache: "no-store" });
-            if(!res.ok) throw new Error(res.status + " " + res.statusText);
-            el.textContent = (await res.text()).trim();
-          }catch(err){
-            el.textContent = `Could not load ${url}\n${err.message}`;
-          }
-        }
-        loadInto("tam-program", `${RAW_BASE}/elf.txt`);
-
-        // Local upload/paste for output
-        function readLocalTxt(file, intoTextareaId){
-          const ta = document.getElementById(intoTextareaId);
-          const reader = new FileReader();
-          reader.onload = () => { ta.value = String(reader.result || "").trim(); };
-          reader.onerror = () => { ta.value = `Could not read ${file.name}`; };
-          reader.readAsText(file);
-        }
-        document.getElementById("upload-output").addEventListener("change", (e) => {
-          const file = e.target.files?.[0]; if(!file) return;
-          readLocalTxt(file, "tam-output-ta");
-        });
-        document.getElementById("clear-output").addEventListener("click", () => {
-          document.getElementById("tam-output-ta").value = "";
-        });
-      </script>
+  // Show both input and run trace
+  loadInto("tam-program", "elf.txt");
+  loadInto("tam-trace", "run_example.txt"); // <-- add this file to your repo
+</script>
 
 
       <!-- How-to (keep brief; readers can use the README for full details) -->
