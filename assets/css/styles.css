@@ -28,7 +28,7 @@ Accessibility: visible focus, honors reduced motion
   --size-5:28px;
   --size-6:36px;
 
-  --container-max:1100px;   /* keep lines readable on big monitors */
+  --container-max: 1280px;   /* keep lines readable on big monitors */
 }
 
 /* -------------------- Reset & base -------------------- */
@@ -192,32 +192,24 @@ html,body{ max-width:100%; overflow-x:hidden; }
 }
 
 /* -------------------- Colors to help distinguish design issues --------------------*/
-/* Background for entire page */
 body {
-  background: #f5f5f5; /* light grey */
-  color: var(--text);
-  font-family: var(--font-body);
+  background: #ffffff;           /* keep page background white */
+  color: #161616;
 }
 
-/* Headers in UCF gold */
 h1, h2, h3, h4 {
-  font-family: var(--font-heading);
-  color: #ffcc00; /* UCF gold */
-  margin: 0 0 .5rem;
+  color: #000000;                /* headings black */
 }
 
-/* Resume cards/sections black */
-.card, .sidebar {
-  background: #000;    /* black */
-  color: #fff;         /* white text for readability */
-  padding: 1rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+.card,
+.sidebar {
+  background: #f5f5f5;           /* light gray cards/sidebar */
+  color: #161616;                /* black body text */
 }
 
-/* Make links visible against black cards */
-.card a, .sidebar a {
-  color: #ffcc00; /* gold links */
+.card a,
+.sidebar a {
+  color: #161616;                /* links black on light gray */
 }
 
 
