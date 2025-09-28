@@ -116,8 +116,10 @@ html,body{ max-width:100%; overflow-x:hidden; }
 .layout{
   display:grid; gap:1.5rem; padding:1.25rem 0;  /* vertical padding only; sides handled by container */
 }
-@media (min-width:900px){
-  .layout{ grid-template-columns:minmax(260px,30%) 1fr; align-items:start; }
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(240px, 280px) 1fr;
+  }
 }
 
 .sidebar{
@@ -145,11 +147,13 @@ html,body{ max-width:100%; overflow-x:hidden; }
 .skill-groups article{ background:rgba(0,0,0,.03); padding:.75rem; border-radius:10px; }
 
 /* -------------------- Projects (home) -------------------- */
-.project-grid{
-  display:grid;
-  gap:1rem;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+.project-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: stretch;
 }
+
 .project-tile{
   display:grid; grid-template-columns:110px 1fr; gap:.85rem; align-items:start;
   padding:.9rem; border-radius:14px; background:var(--card-bg);
