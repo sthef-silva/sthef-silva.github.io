@@ -3,6 +3,9 @@ Personal résumé website built with HTML and CSS
 
 # CIS 4004 Résumé — GitHub Pages
 
+## How-to Run
+- Copy & paste into URL: https://sthef-silva.github.io/
+
 ## Content checklist (meets rubric)
 - Name, UCF email, LinkedIn
 - Objective (1–2 sentences)
@@ -14,14 +17,8 @@ Personal résumé website built with HTML and CSS
 
 
 ## Accessibility checklist
-- Images have meaningful `alt` text
-- Color contrast (AA) — use High Contrast toggle to verify
-- Logical heading order: only one `<h1>` per page
+- Images
+- Color contrast (AA)
+- Logical heading order
 - Keyboard: focus rings visible; hamburger & toggles focusable
 - Links are descriptive (no "click here")
-
-
-## Validation
-- HTML: https://validator.w3.org/ (Upload each .html or paste URL)
-- CSS: https://jigsaw.w3.org/css-validator/
-- WAVE: https://wave.webaim.org/ (Enter your site URL)
