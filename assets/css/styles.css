@@ -143,6 +143,7 @@ html,body{ max-width:100%; overflow-x:hidden; }
 .headshot {
   width: 350px;       /*  width */
   height: 350px;      /*  height */
+  align-items: center;
   object-fit: cover;  /* crops nicely into a square */
   border-radius: 12px;
 }
@@ -257,18 +258,21 @@ html,body{ max-width:100%; overflow-x:hidden; }
   border:1px solid rgba(0,0,0,.2);
 }
 
-/* === Header: move all nav buttons to the right (site-wide) === */
-.site-header{
-  display:flex;                 /* override earlier grid */
-  justify-content:space-between;/* brand on left, nav on right */
-  align-items:center;
+/* -------------------- NAV OVERRIDES -------------------- */
+.site-header {
+  display: flex !important;           /* override earlier grid */
+  align-items: center !important;
 }
-/* this single line pushes the nav to the right even if .header-actions exists */
-.site-header > nav { margin-left:auto; }
 
-/* keep the pills as a horizontal row, pushed to the right */
-.site-nav ul{
-  display:flex;
-  gap:.75rem;
-  justify-content:flex-end;     /* right-align the list inside nav */
+.brand { order: 1 !important; }
+.header-actions { order: 2 !important; display: none !important; } /* hide for now */
+.site-nav { order: 3 !important; margin-left: auto !important; }
+
+/* nav list = horizontal row and right-aligned */
+.site-nav ul {
+  display: flex !important;
+  gap: .75rem !important;
+  justify-content: flex-end !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
