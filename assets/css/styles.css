@@ -28,7 +28,7 @@ Accessibility: visible focus, honors reduced motion
   --size-5:28px;
   --size-6:36px;
 
-  --container-max: 1280px;   /* keep lines readable on big monitors */
+  --container-max: 100%;   /* scales with screen */
 }
 
 /* -------------------- Reset & base -------------------- */
