@@ -12,17 +12,18 @@
   <a class="skip-link" href="#content">Skip to content</a>
 
   <header class="site-header" role="banner">
-    <div class="brand">
-      <h1 class="site-title">Sthefanny Silva Resume</h1>
-    </div>
+  <div class="brand">
+    <h1 class="site-title">Sthefanny Silva</h1>
+    <p class="site-tagline">Information Technology · University of Central Florida</p>
+  </div>
 
-    <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
-      <ul>
-        <li><a class="nav-pill" href="index.html" aria-current="page">Home</a></li>
-        <li><a class="nav-pill" href="project1.html">EDESim</a></li>
-        <li><a class="nav-pill" href="project2.html">TAM</a></li>
-      </ul>
-    </nav>    
+  <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
+    <ul>
+      <li><a class="nav-pill" href="index.html" aria-current="page">Home</a></li>
+      <li><a class="nav-pill" href="project1.html">EDESim</a></li>
+      <li><a class="nav-pill" href="project2.html">TAM</a></li>
+    </ul>
+  </nav>   
 
     <div class="header-actions">
         <!-- Download Resume Button -->
@@ -88,9 +89,11 @@
 
       <section aria-labelledby="projects-heading" class="card">
         <h2 id="projects-heading">Projects</h2>
-        <div class="project-cards">
-          <article class="project-card">
-            <img src="assets/images/project1.jpg" alt="Screenshot representing Project 1" />
+
+        <div class="project-grid">
+          <!-- Project 1 -->
+          <a class="project-tile" href="project1.html">
+            <img src="assets/images/project1.jpg" alt="EDESim preview" width="110" height="70" />
             <div>
               <h3><a href="project1.html">Event-Driven Enterprise Simulator (EDESim)</a></h3>
               <p>
@@ -100,21 +103,23 @@
                 apply tiered discounts and 6% tax, generate an invoice, and log each order to transactions.csv with a unique timestamped ID.
               </p>
               <ul class="badges">
-                <li>Java</li><li>Event-Driven</li><li>CSV I/O</li><li>Discounts/Tax</li><li>Transactions Log</li>
-              </ul>              
+                <li>Java</li><li>Event-Driven</li><li>CSV I/O</li><li>GitHub Pages</li>
+              </ul>
             </div>
-          </article>
-          <article class="project-card">
-            <img src="assets/images/project2.jpg" alt="Screenshot representing Project 2" />
-             <div>
+          </a>
+
+          <!-- Project 2 -->
+          <a class="project-tile" href="project2.html">
+            <img src="assets/images/project2.jpg" alt="TAM diagram" width="110" height="70" />
+            <div>
               <h3><a href="project2.html">Tiny Accumulator Machine (TAM)</a></h3>
               <p>Implemented a Tiny Accumulator Machine (TAM) virtual machine in C using a two-word instruction set (opcode + operand). 
                 The VM tracks PC/ACC/RAM state and executes arithmetic and control-flow instructions, loading user programs and stepping through execution with clear state updates.</p>
               <ul class="badges">
-                <li>C</li><li>Virtual Machine</li><li>Two-Word ISA</li><li>Emulator</li><li>File I/O</li>
+                <li>C</li><li>Virtual Machine</li><li>Two-Word ISA</li><li>Emulator</li>
               </ul>
             </div>
-          </article>
+          </a>
         </div>
       </section>
     </section>
