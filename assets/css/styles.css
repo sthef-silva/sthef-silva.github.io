@@ -140,7 +140,16 @@ html,body{ max-width:100%; overflow-x:hidden; }
   box-shadow:var(--shadow);
   border:1px solid rgba(0,0,0,.06);
 }
-.headshot{ width:100%; border-radius:8px; object-fit:cover; }
+/* --- Headshot image fix --- */
+.headshot {
+  width: 200px;       /*  width */
+  height: 200px;      /*  height */
+  object-fit: cover;  /* crops nicely into a square */
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;     /* centers it in the sidebar */
+}
+
 .contact-list{ list-style:none; padding:0; margin:0; }
 .contact-list li{ margin:.25rem 0; }
 .skill-groups{ display:grid; gap:.75rem; }
