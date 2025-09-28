@@ -147,8 +147,8 @@ html,body{ max-width:100%; overflow-x:hidden; }
 }
 /* --- Headshot image fix --- */
 .headshot {
-  width: 350px;       /*  width */
-  height: 350px;      /*  height */
+  width: 200px;       /*  width */
+  height: 200px;      /*  height */
   object-fit: cover;  /* crops nicely into a square */
   border-radius: 12px;
 }
