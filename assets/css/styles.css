@@ -244,15 +244,10 @@ html,body{ max-width:100%; overflow-x:hidden; }
   margin-inline: auto;
 }
 
-/* Resume headshot smaller cube */
-.headshot {
-  width: 100%;          /*  width */
-  max-width: 700px;     /* caps size  */
-  height: auto;         /*  height */
-  aspect-ratio: 1 / 1;  /*  square */
-  object-fit: cover;    /* crop instead of distort */
-  border-radius: 12px;
-  display: block;
-  margin: 0 auto;       /* centers in the sidebar */
+/* Resume headshot */
+.headshot{ 
+  width:100%; 
+  height: fit-content;
+  border-radius:8px; 
+  object-fit:cover; 
 }
-
