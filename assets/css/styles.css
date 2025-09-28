@@ -1,6 +1,6 @@
 /*
 Theme: minimal · modern · professional
-Palette: black, beige/tan, white
+Palette: white, light gray, black
 Fonts: Headings — Cambria/serif; Body — system sans
 Accessibility: visible focus, honors reduced motion
 */
@@ -11,8 +11,8 @@ Accessibility: visible focus, honors reduced motion
   --muted:#6b6b6b;
   --beige:#efe7dc;          /* soft tan */
   --accent:#111111;         /* near-black accents */
-  --card-bg:#f8f6f2;        /* light beige for cards */
-  --link:#0a0a0a;
+  --card-bg:#f5f5f5;        /* light gray for cards/sidebar */
+  --link:#161616;
 
   --radius:14px;
   --shadow:0 10px 24px rgba(0,0,0,.08);
@@ -28,7 +28,8 @@ Accessibility: visible focus, honors reduced motion
   --size-5:28px;
   --size-6:36px;
 
-  --container-max: 100%;   /* scales with screen */
+  /* Fluid container: grows with viewport, capped at 1400px */
+  --container-max: min(100%, 1400px);
 }
 
 /* -------------------- Reset & base -------------------- */
@@ -46,7 +47,7 @@ body{
 }
 
 img,iframe{ max-width:100%; height:auto; display:block; }
-h1,h2,h3,h4{ font-family:var(--font-heading); color:var(--accent); margin:0 0 .5rem; }
+h1,h2,h3,h4{ font-family:var(--font-heading); color:#000; margin:0 0 .5rem; }
 .site-title{ font-size:clamp(var(--size-5),3.2vw,42px); }
 p{ margin:0 0 1rem; }
 a{ color:var(--link); }
@@ -97,7 +98,7 @@ html,body{ max-width:100%; overflow-x:hidden; }
 }
 .site-nav a.nav-pill[aria-current="page"]{ font-weight:600; }
 .site-nav a.nav-pill:hover,
-.site-nav a.nav-pill:active{ transform:none; box-shadow:0 1px 0 rgba(0,0,0,.05) inset; }
+.site-nav a.nav-pill:active{ transform:none; box-shadow:none; }
 
 /* -------------------- Universal container -------------------- */
 .site-header,
@@ -144,18 +145,26 @@ html,body{ max-width:100%; overflow-x:hidden; }
 .skill-groups article{ background:rgba(0,0,0,.03); padding:.75rem; border-radius:10px; }
 
 /* -------------------- Projects (home) -------------------- */
-.project-grid{ display:grid; gap:1rem; }
-@media (min-width:800px){
-  .project-grid{ grid-template-columns:1fr 1fr; }
+.project-grid{
+  display:grid;
+  gap:1rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 }
 .project-tile{
   display:grid; grid-template-columns:110px 1fr; gap:.85rem; align-items:start;
   padding:.9rem; border-radius:14px; background:var(--card-bg);
   border:1px solid rgba(0,0,0,.06);
   text-decoration:none; color:inherit;
-  transition:transform .12s ease, box-shadow .12s ease;
+  box-shadow:0 1px 0 rgba(0,0,0,.05);
+  transition:none;
+  cursor:default;
 }
-.project-tile:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.10); }
+.project-tile:hover,
+.project-tile:active,
+.project-tile:focus-within{
+  transform:none;
+  box-shadow:0 1px 0 rgba(0,0,0,.05);
+}
 .project-tile img{ border-radius:10px; }
 .project-tile h3{ margin:0 0 .25rem; }
 .project-tile p{ margin:0; color:var(--muted); }
@@ -164,7 +173,14 @@ html,body{ max-width:100%; overflow-x:hidden; }
   list-style:none; padding:0; margin:.5rem 0 0;
   display:flex; gap:.5rem; flex-wrap:wrap;
 }
-.badges li{ background:#e8e2d7; padding:.2rem .55rem; border-radius:999px; font-size:var(--size-1); }
+.badges li{
+  background:#e8e2d7;
+  padding:.2rem .55rem;
+  border-radius:999px;
+  font-size:var(--size-1);
+  transition:none;
+}
+.badges li:hover{ background:#e8e2d7; color:var(--text); }
 
 /* -------------------- Project pages -------------------- */
 .narrow{ max-width:900px; }
@@ -190,28 +206,6 @@ html,body{ max-width:100%; overflow-x:hidden; }
   color:var(--muted);
   margin:.25rem 0 .5rem;
 }
-
-/* -------------------- Colors to help distinguish design issues --------------------*/
-body {
-  background: #ffffff;           /* keep page background white */
-  color: #161616;
-}
-
-h1, h2, h3, h4 {
-  color: #000000;                /* headings black */
-}
-
-.card,
-.sidebar {
-  background: #f5f5f5;           /* light gray cards/sidebar */
-  color: #161616;                /* black body text */
-}
-
-.card a,
-.sidebar a {
-  color: #161616;                /* links black on light gray */
-}
-
 
 /* -------------------- Print -------------------- */
 @media print{
