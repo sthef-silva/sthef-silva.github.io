@@ -52,40 +52,34 @@
       <!-- Try-it demo (browser-hosted page in the TAM repo) -->
        <section class="card" aria-labelledby="demo-heading">
         <h3 id="demo-heading">Try the Simulator</h3>
-        <p class="disclaimer" role="note">Prototype demo — reads the <em>program</em> and <em>output</em> from the TAM repo.</p>
+        <p class="disclaimer" role="note">Prototype demo — reads <em>Program</em> and <em>PROGRAMOUTPUT.txt</em> from the repo.</p>
 
-        <!-- Program picker -->
         <div style="display:flex; gap:.5rem; align-items:center; margin:.25rem 0 1rem;">
           <label for="program-select"><strong>Program file:</strong></label>
           <select id="program-select">
-            <!-- Change these to match actual files in the repo -->
+            <!-- Make these match real files in your repo -->
             <option value="program.txt">program.txt</option>
-            <option value="sample_program.txt">sample_program.txt</option>
+            <!-- <option value="programs/add.txt">programs/add.txt</option> -->
           </select>
           <a id="open-program" class="nav-pill" href="#" target="_blank" rel="noopener">Open on GitHub</a>
         </div>
 
-        <!-- Program (input) -->
         <h4>Program</h4>
         <pre id="tam-program" class="codeblock">Loading program text…</pre>
 
-        <!-- Output -->
-        <h4 style="margin-top:1rem;">Output (programoutput.txt)</h4>
-        <pre id="tam-output" class="codeblock">Loading programoutput.txt…</pre>
+        <h4 style="margin-top:1rem;">Output (PROGRAMOUTPUT.txt)</h4>
+        <pre id="tam-output" class="codeblock">Loading PROGRAMOUTPUT.txt…</pre>
 
-        <!-- Links -->
         <p style="margin-top:.75rem">
-          <a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/blob/main/tinyvm.c" target="_blank" rel="noopener">View tinyvm.c on GitHub</a>
-          <a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C" target="_blank" rel="noopener">Open TAM repository</a>
+          <a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/blob/main/tinyvm.c" target="_blank" rel="noopener">View tinyvm.c</a>
+          <a class="nav-pill" href="https://github.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C" target="_blank" rel="noopener">Open repo</a>
         </p>
       </section>
 
-       <script>
-        // ====== configuration (edit if filenames/paths differ) ======
+      <script>
         const RAW_BASE = "https://raw.githubusercontent.com/sthef-silva/Tiny-Accumulator-Machine--TAM----Two-Word-Instruction-VM-in-C/main";
-        const OUTPUT_FILE = "programoutput.txt";     // output file you committed
-        const DEFAULT_PROGRAM_FILE = "program.txt";  // must match one of the <option> values above
-        // ============================================================
+        const OUTPUT_FILE = "PROGRAMOUTPUT.txt";   // <-- exact case
+        const DEFAULT_PROGRAM_FILE = "program.txt"; // <-- must match an <option> above
 
         const $programPre = document.getElementById("tam-program");
         const $outputPre  = document.getElementById("tam-output");
@@ -109,7 +103,6 @@
         }
 
         (function init(){
-          // set default program in dropdown if present
           for (const opt of $select.options){
             if(opt.value === DEFAULT_PROGRAM_FILE){ $select.value = DEFAULT_PROGRAM_FILE; break; }
           }
@@ -119,6 +112,7 @@
 
         $select.addEventListener("change", () => setProgram($select.value));
       </script>
+
 
       <!-- How-to (keep brief; readers can use the README for full details) -->
       <section aria-labelledby="howto-heading" class="card">
