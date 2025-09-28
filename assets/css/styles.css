@@ -1,9 +1,3 @@
-/*
-Theme: minimal · modern · professional
-Palette: white, light gray, black
-Fonts: Headings — Cambria/serif; Body — system sans
-Accessibility: visible focus, honors reduced motion
-*/
 
 :root{
   --bg:#ffffff;
@@ -269,6 +263,8 @@ html,body{ max-width:100%; overflow-x:hidden; }
   justify-content:space-between;/* brand on left, nav on right */
   align-items:center;
 }
+/* this single line pushes the nav to the right even if .header-actions exists */
+.site-header > nav { margin-left:auto; }
 
 /* keep the pills as a horizontal row, pushed to the right */
 .site-nav ul{
